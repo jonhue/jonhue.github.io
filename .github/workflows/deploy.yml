@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Build & deploy
-      uses: JamesIves/github-pages-deploy-action@v2.0.3
+      uses: JamesIves/github-pages-deploy-action@2.0.3
       env:
         ACCESS_TOKEN: ${{ secrets.SSH_PRIVATE_KEY }}
         BASE_BRANCH: development

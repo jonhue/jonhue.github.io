@@ -23,5 +23,6 @@ jobs:
       run: yarn stylelint
     - name: Deploy
       run: |
+        git remote set-url origin git@github.com:jonhue/jonhue.github.io.git
         yarn build
         yarn deploy

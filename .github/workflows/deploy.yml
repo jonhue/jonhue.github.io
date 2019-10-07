@@ -12,6 +12,9 @@ jobs:
     
     steps:
     - uses: actions/checkout@master
+    - uses: webfactory/ssh-agent@v0.1.1
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
     - name: Install dependencies
       run: yarn install
     - name: Run ESLint

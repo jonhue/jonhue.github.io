@@ -12,6 +12,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@master
+    - name: Install dependencies
+      run: yarn install
     - name: Run ESLint
       run: yarn eslint
     - name: Run stylelint

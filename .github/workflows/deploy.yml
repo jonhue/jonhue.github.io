@@ -1,0 +1,21 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+    - development
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Run ESLint
+      run: yarn eslint
+    - name: Run stylelint
+      run: yarn stylelint
+    - name: Deploy
+      run: |
+        yarn build
+        yarn deploy

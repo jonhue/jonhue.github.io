@@ -1,0 +1,37 @@
+/* ------------------------
+	icons
+------------------------- */
+@function unicode($str) {
+  @return unquote("\"\\#{$str}\"");
+}
+
+$nc-logo-github: unicode(ea05);
+$nc-logo-linkedin: unicode(ea06);
+$nc-moon-full-2: unicode(ea09);
+$nc-tail-triangle-down-2: unicode(ea0a);
+$nc-moon-stars: unicode(ea0b);
+$nc-shape-star: unicode(ea0c);
+
+.nc-logo-github::before {
+  content: $nc-logo-github;
+}
+
+.nc-logo-linkedin::before {
+  content: $nc-logo-linkedin;
+}
+
+.nc-moon-full-2::before {
+  content: $nc-moon-full-2;
+}
+
+.nc-tail-triangle-down-2::before {
+  content: $nc-tail-triangle-down-2;
+}
+
+.nc-moon-stars::before {
+  content: $nc-moon-stars;
+}
+
+.nc-shape-star::before {
+  content: $nc-shape-star;
+}

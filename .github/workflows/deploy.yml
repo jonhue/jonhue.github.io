@@ -12,17 +12,11 @@ jobs:
     
     steps:
     - uses: actions/checkout@master
-    - uses: webfactory/ssh-agent@v0.1.1
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-    - name: Install dependencies
-      run: yarn install
-    - name: Run ESLint
-      run: yarn eslint
-    - name: Run stylelint
-      run: yarn stylelint
-    - name: Deploy
-      run: |
-        git remote set-url origin git@github.com:jonhue/jonhue.github.io.git
-        yarn build
-        yarn deploy
+    - name: Build & deploy
+      uses: JamesIves/github-pages-deploy-action@v2
+      env:
+        ACCESS_TOKEN: ${{ secrets.SSH_PRIVATE_KEY }}
+        BASE_BRANCH: development
+        BRANCH: master
+        FOLDER: dist
+        BUILD_SCRIPT: yarn install && yarn build

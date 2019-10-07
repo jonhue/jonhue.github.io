@@ -185,8 +185,17 @@ body {
   }
 
   .Projects {
-    margin: 2rem auto 0;
+    margin: 2.5rem auto 0;
     max-width: 1000px;
+
+    // &--libraries section a {
+    //   background: #2b3159;
+    //   color: #fff;
+    //
+    //   h2 {
+    //     font-size: 24px !important;
+    //   }
+    // }
 
     h3 {
       font-size: 18px;
@@ -205,10 +214,10 @@ body {
       }
 
       a {
-        background: #fff;
+        background: #2b3159;
         border-radius: 5px;
         box-shadow: 0 3px 6px rgba(#000, 0.16);
-        color: #2b3159;
+        color: #fff;
         padding: 0.5rem 1.5rem;
         position: relative;
         text-decoration: none !important;
@@ -222,9 +231,9 @@ body {
         }
 
         h2 {
-          font-size: 30px;
+          font-size: 24px;
           font-weight: 800;
-          margin: 10rem 0 0;
+          margin: 8rem 0 0;
         }
 
         p {

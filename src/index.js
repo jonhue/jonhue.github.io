@@ -1,4 +1,4 @@
-import "./index.scss"
+import './index.scss'
 
 import 'onsignal/dist/OneSignalSDK'
 import OnSignal from 'onsignal'

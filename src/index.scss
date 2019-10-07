@@ -1,0 +1,246 @@
+@import url("https://rsms.me/inter/inter-ui.css");
+@import "nucleo/scss/nucleo";
+
+html {
+  color: #fff;
+  font-family: "Inter UI", sans-serif;
+  font-size: 16px;
+}
+
+h1,
+h2,
+p {
+  line-height: 1.58;
+}
+
+a {
+  color: #ad99c7;
+  text-decoration: none;
+
+  &:active,
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &.button {
+    background: #ad99c7;
+    border-radius: 30px;
+    box-shadow: 0 3px 6px rgba(#000, 0.16);
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 14px 30px 16px;
+    position: relative;
+    text-decoration: none;
+    top: 0;
+    transition: all 0.15s ease-out;
+
+    &:active,
+    &:focus,
+    &:hover {
+      top: -1px;
+    }
+
+    &.sec {
+      background: transparent;
+      border: 2px solid #ad99c7;
+      padding: 8px 20px 10px;
+    }
+  }
+}
+
+body {
+  background: #2b3159;
+  background: linear-gradient(180deg, #2b3159 0%, #5462a9 100%);
+  display: grid;
+  grid-template-areas: "content" "links";
+  grid-template-rows: 1fr 75px;
+  padding: 1.5rem;
+
+  @media only screen and (min-width: 600px) {
+    grid-template-areas: "links" "content";
+    grid-template-rows: 40px 1fr;
+  }
+
+  .Links {
+    align-items: center;
+    display: flex;
+    grid-area: links;
+    justify-content: space-between;
+    margin-top: 2rem;
+
+    @media only screen and (min-width: 600px) {
+      margin-top: 0;
+    }
+
+    &__social {
+      i.nc {
+        color: #fff;
+        font-size: 20px;
+        transition: color 0.15s ease-out;
+
+        &:active,
+        &:focus,
+        &:hover {
+          color: #ad99c7;
+        }
+      }
+
+      a {
+        text-decoration: none !important;
+
+        &:not(:first-child) {
+          margin-left: 1.25rem;
+        }
+      }
+    }
+  }
+
+  .Content {
+    grid-area: content;
+  }
+
+  .Hero {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 35px;
+
+    @media only screen and (min-width: 600px) {
+      align-items: center;
+      height: 75vh;
+      padding: 80px 0 100px;
+    }
+
+    h1,
+    p {
+      margin-top: 0;
+      width: auto;
+
+      @media only screen and (min-width: 600px) {
+        margin-top: 0.67em;
+        text-align: center;
+      }
+    }
+
+    h1 {
+      font-size: 35px;
+      font-weight: 800;
+      max-width: 500px;
+
+      @media only screen and (min-width: 600px) {
+        font-size: 45px;
+      }
+    }
+
+    p {
+      max-width: 550px;
+
+      &.mobile {
+        @media only screen and (min-width: 600px) {
+          display: none;
+        }
+      }
+    }
+
+    &__subscribe {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+
+      @media only screen and (min-width: 600px) {
+        align-items: center;
+      }
+
+      a.button {
+        margin-top: 0.75rem;
+      }
+
+      a#more {
+        align-items: center;
+        color: #9fa5c0;
+        cursor: pointer;
+        display: none;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 2rem;
+        text-decoration: none !important;
+
+        @media only screen and (min-width: 600px) {
+          display: flex;
+        }
+
+        i {
+          font-size: 20px;
+        }
+
+        p {
+          margin-left: 0.5rem;
+          width: auto;
+        }
+      }
+    }
+  }
+
+  .Projects {
+    margin: 2rem auto 0;
+    max-width: 1000px;
+
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    section {
+      align-items: start;
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: 1fr;
+
+      @media only screen and (min-width: 900px) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      a {
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 3px 6px rgba(#000, 0.16);
+        color: #2b3159;
+        padding: 0.5rem 1.5rem;
+        position: relative;
+        text-decoration: none !important;
+        top: 0;
+        transition: all 0.15s ease-out;
+
+        &:active,
+        &:focus,
+        &:hover {
+          top: -2px;
+        }
+
+        h2 {
+          font-size: 30px;
+          font-weight: 800;
+          margin: 10rem 0 0;
+        }
+
+        p {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  footer p {
+    display: none;
+    margin-top: 2rem;
+    text-align: center;
+
+    @media only screen and (min-width: 600px) {
+      display: block;
+    }
+  }
+}

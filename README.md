@@ -34,6 +34,8 @@ $ yarn run eslint
 
 ### Deployment
 
+Every push to `development` is automatically deployed. You can manually deploy with:
+
 ```
 $ yarn build
 $ yarn deploy

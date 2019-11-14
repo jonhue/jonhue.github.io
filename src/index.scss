@@ -75,6 +75,9 @@ body {
     }
 
     &__social {
+      align-items: center;
+      display: flex;
+
       i.nc {
         color: #fff;
         font-size: 20px;
@@ -88,10 +91,30 @@ body {
       }
 
       a {
-        text-decoration: none !important;
-
         &:not(:first-child) {
-          margin-left: 1.25rem;
+          margin-left: 1.25rem !important;
+        }
+      }
+    }
+
+    &__actions a {
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 1;
+      text-decoration: none !important;
+
+      &:not(:first-child) {
+        margin-left: 1rem !important;
+      }
+
+      &:not(.button) {
+        color: #fff;
+        transition: color 0.15s ease-out;
+
+        &:active,
+        &:focus,
+        &:hover {
+          color: #ad99c7;
         }
       }
     }

@@ -10,7 +10,7 @@
     "eslint": "eslint 'src/**/*.js'"
   },
   "devDependencies": {
-    "css-loader": "^3.3.0",
+    "css-loader": "^3.3.2",
     "eslint": "^6.7.2",
     "file-loader": "^4.3.0",
     "gh-pages": "^2.1.1",

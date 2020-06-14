@@ -9,6 +9,9 @@
     "stylelint": "stylelint 'src/**/*.scss'",
     "eslint": "eslint 'src/**/*.js'"
   },
+  "engines": {
+    "node": "14.4.0"
+  },
   "devDependencies": {
     "css-loader": "^3.6.0",
     "eslint": "^7.2.0",

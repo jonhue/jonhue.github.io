@@ -6,3 +6,5 @@ dist/*.ttf
 dist/*.woff
 dist/*.woff2
 dist/*.eot
+
+.tool-versions

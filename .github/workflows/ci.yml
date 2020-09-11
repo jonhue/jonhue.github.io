@@ -14,6 +14,8 @@ jobs:
         node-version: '14.4.0'
     - name: Install dependencies
       run: yarn install
+    - name: Build
+      run: yarn build
     - name: Run ESLint
       run: yarn eslint
     - name: Run stylelint

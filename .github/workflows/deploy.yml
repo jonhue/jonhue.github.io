@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-    - development
+    - master
 
 jobs:
   build:
@@ -14,7 +14,7 @@ jobs:
     - uses: actions/checkout@master
     - uses: actions/setup-node@v2.1.2
       with:
-        node-version: '14.9.0'
+        node-version: '15.2.1'
     - name: Install dependencies
       run: yarn install
     - name: Build
@@ -23,7 +23,6 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        publish_branch: master
         publish_dir: ./dist
         allow_empty_commit: true
         force_orphan: true

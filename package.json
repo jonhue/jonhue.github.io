@@ -10,7 +10,7 @@
     "eslint": "eslint 'src/**/*.js'"
   },
   "engines": {
-    "node": "14.9.0"
+    "node": "15.2.1"
   },
   "devDependencies": {
     "css-loader": "^5.0.1",

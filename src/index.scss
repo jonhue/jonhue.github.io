@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap');
 @import "nucleo/scss/nucleo";
 
-$background: #F4D58D;
-$secondary-background: #708D81;
+$background: #f4d58d;
+$secondary-background: #708d81;
 $color: #001427;
-$accent-color: #BF0603;
-$dark-accent-color: #8D0801;
+$accent-color: #bf0603;
+$dark-accent-color: #8d0801;
 
 $content-width: 1300px;
 
@@ -43,7 +43,7 @@ body {
 }
 
 .Wrapper {
-  background: #F4D58D;
+  background: #f4d58d;
   display: grid;
   grid-template-areas: "header" "main" "footer";
   grid-template-rows: auto;

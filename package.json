@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server",
+    "start": "webpack serve",
     "deploy": "gh-pages -d dist -b master",
     "stylelint": "stylelint 'src/**/*.scss'",
     "eslint": "eslint 'src/**/*.js'"
   },
   "engines": {
-    "node": "15.2.1"
+    "node": "15.8.0"
   },
   "devDependencies": {
     "css-loader": "^5.2.1",
@@ -27,8 +27,5 @@
     "webpack": "^5.33.2",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2"
-  },
-  "dependencies": {
-    "onsignal": "^5.0.6"
   }
 }

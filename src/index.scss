@@ -1,20 +1,106 @@
-@import url("https://rsms.me/inter/inter-ui.css");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap');
 @import "nucleo/scss/nucleo";
 
+$background: #f4d58d;
+$secondary-background: #708d81;
+$color: #001427;
+$accent-color: #bf0603;
+$dark-accent-color: #8d0801;
+
+$content-width: 1300px;
+
+$br-small: 420px;
+$br-phone: 640px;
+$br-tablet: 1000px;
+
 html {
-  color: #fff;
-  font-family: "Inter UI", sans-serif;
+  background: $secondary-background;
+  box-sizing: border-box;
   font-size: 16px;
+  line-height: 1.58;
+  overflow-y: scroll;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+
+  @media only screen and (min-width: $content-width) {
+    font-size: 20px;
+  }
 }
 
-h1,
-h2,
-p {
-  line-height: 1.58;
+body {
+  color: $color;
+  font-family: 'Inter', sans-serif;
+  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  font-kerning: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: normal;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+.Wrapper {
+  background: #f4d58d;
+  display: grid;
+  grid-template-areas: "header" "main" "footer";
+  grid-template-rows: auto;
+  margin: 0 auto;
+  max-width: $content-width;
+  padding: 3em 1.5em;
+
+  @media only screen and (min-width: $br-phone) {
+    padding: 3em;
+  }
+
+  @media only screen and (min-width: $content-width) {
+    padding: 5em;
+  }
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1.2;
+  margin: 1.5em 0;
+
+  @media only screen and (min-width: $br-small) {
+    font-size: 4em;
+    line-height: 1.1;
+  }
+
+  @media only screen and (min-width: $br-phone) {
+    font-size: 6em;
+    line-height: 1;
+    margin: 0.67em 0;
+  }
+
+  @media only screen and (min-width: $br-tablet) {
+    font-size: 8em;
+  }
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1;
+
+  @media only screen and (min-width: $br-small) {
+    font-size: 2.5em;
+  }
+
+  @media only screen and (min-width: $br-phone) {
+    font-size: 3em;
+  }
 }
 
 a {
-  color: #ad99c7;
+  color: $accent-color;
+  font-weight: 900;
   text-decoration: none;
 
   &:active,
@@ -23,256 +109,109 @@ a {
     text-decoration: underline;
   }
 
-  &.button {
-    background: #ad99c7;
-    border-radius: 30px;
-    box-shadow: 0 3px 6px rgba(#000, 0.16);
-    color: #fff;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 14px 30px 16px;
-    position: relative;
-    text-decoration: none;
-    top: 0;
-    transition: all 0.15s ease-out;
+  &:active {
+    color: $dark-accent-color;
+  }
+}
 
-    &:active,
-    &:focus,
-    &:hover {
-      top: -1px;
+header {
+  align-items: center;
+  display: flex;
+  grid-area: header;
+  justify-content: space-between;
+
+  .header__social {
+    align-items: center;
+    display: flex;
+
+    i.nc {
+      color: $color;
+      font-size: 1.25em;
+
+      &:active,
+      &:focus,
+      &:hover {
+        color: $accent-color;
+      }
     }
 
-    &.sec {
-      background: transparent;
-      border: 2px solid #ad99c7;
-      padding: 8px 20px 10px;
+    a {
+      line-height: 1;
+
+      &:not(:first-child) {
+        margin-left: 1em;
+
+        @media only screen and (min-width: $br-phone) {
+          margin-left: 1.5em;
+        }
+      }
+    }
+  }
+
+  .header__actions a {
+    &:not(:first-child) {
+      margin-left: 1em;
+
+      @media only screen and (min-width: $br-phone) {
+        margin-left: 1.5em;
+      }
     }
   }
 }
 
-body {
-  background: #2b3159;
-  background: linear-gradient(180deg, #2b3159 0%, #5462a9 100%);
-  display: grid;
-  grid-template-areas: "content" "links";
-  grid-template-rows: 1fr 75px;
-  padding: 1.5rem;
+main {
+  grid-area: main;
+}
 
-  @media only screen and (min-width: 600px) {
-    grid-template-areas: "links" "content";
-    grid-template-rows: 40px 1fr;
-  }
-
-  .Links {
-    align-items: center;
-    display: flex;
-    grid-area: links;
-    justify-content: space-between;
-    margin-top: 2rem;
-
-    @media only screen and (min-width: 600px) {
-      margin-top: 0;
-    }
-
-    &__social {
-      align-items: center;
-      display: flex;
-
-      i.nc {
-        color: #fff;
-        font-size: 20px;
-        transition: color 0.15s ease-out;
-
-        &:active,
-        &:focus,
-        &:hover {
-          color: #ad99c7;
-        }
-      }
-
-      a {
-        &:not(:first-child) {
-          margin-left: 1.25rem !important;
-        }
-      }
-    }
-
-    &__actions a {
-      font-size: 14px;
-      font-weight: bold;
-      line-height: 1;
-      text-decoration: none !important;
-
-      &:not(:first-child) {
-        margin-left: 1rem !important;
-      }
-
-      &:not(.button) {
-        color: #fff;
-        transition: color 0.15s ease-out;
-
-        &:active,
-        &:focus,
-        &:hover {
-          color: #ad99c7;
-        }
-      }
-    }
-  }
-
-  .Content {
-    grid-area: content;
-  }
-
-  .Hero {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-bottom: 35px;
-
-    @media only screen and (min-width: 600px) {
-      align-items: center;
-      height: 75vh;
-      padding: 80px 0 100px;
-    }
-
-    h1,
-    p {
-      margin-top: 0;
-      width: auto;
-
-      @media only screen and (min-width: 600px) {
-        margin-top: 0.67em;
-        text-align: center;
-      }
-    }
-
-    h1 {
-      font-size: 35px;
-      font-weight: 800;
-      max-width: 500px;
-
-      @media only screen and (min-width: 600px) {
-        font-size: 45px;
-      }
-    }
-
-    p {
-      max-width: 550px;
-
-      &.mobile {
-        @media only screen and (min-width: 600px) {
-          display: none;
-        }
-      }
-    }
-
-    &__subscribe {
-      align-items: flex-start;
-      display: flex;
-      flex-direction: column;
-
-      @media only screen and (min-width: 600px) {
-        align-items: center;
-      }
-
-      a.button {
-        margin-top: 0.75rem;
-      }
-
-      a#more {
-        align-items: center;
-        color: #9fa5c0;
-        cursor: pointer;
-        display: none;
-        font-size: 14px;
-        font-weight: bold;
-        margin-top: 2rem;
-        text-decoration: none !important;
-
-        @media only screen and (min-width: 600px) {
-          display: flex;
-        }
-
-        i {
-          font-size: 20px;
-        }
-
-        p {
-          margin-left: 0.5rem;
-          width: auto;
-        }
-      }
-    }
-  }
-
-  .Projects {
-    margin: 2.5rem auto 0;
+.Hero {
+  h1 {
     max-width: 1000px;
+  }
 
-    // &--libraries section a {
-    //   background: #2b3159;
-    //   color: #fff;
-    //
-    //   h2 {
-    //     font-size: 24px !important;
-    //   }
-    // }
+  p {
+    font-size: 1.2em;
+    max-width: 550px;
+  }
+}
 
-    h3 {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
+.Section {
+  border-top: 0.2em solid $color;
+  margin-top: 5em;
+
+  @media only screen and (min-width: $br-phone) {
+    margin-top: 8em;
+  }
+
+  &__links {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: 1fr;
+
+    @media only screen and (min-width: $br-phone) {
+      grid-template-columns: 1fr 1fr;
     }
 
-    section {
-      align-items: start;
-      display: grid;
-      grid-gap: 20px;
-      grid-template-columns: 1fr;
+    @media only screen and (min-width: $br-tablet) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
 
-      @media only screen and (min-width: 900px) {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
+    a {
+      p {
+        font-weight: normal;
 
-      a {
-        background: #2b3159;
-        border-radius: 5px;
-        box-shadow: 0 3px 6px rgba(#000, 0.16);
-        color: #fff;
-        padding: 0.5rem 1.5rem;
-        position: relative;
-        text-decoration: none !important;
-        top: 0;
-        transition: all 0.15s ease-out;
-
-        &:active,
-        &:focus,
-        &:hover {
-          top: -2px;
-        }
-
-        h2 {
-          font-size: 24px;
-          font-weight: 800;
-          margin: 8rem 0 0;
-        }
-
-        p {
-          font-size: 15px;
+        &:not(:first-child) {
+          margin-top: 0;
         }
       }
     }
   }
+}
 
-  footer p {
-    display: none;
-    margin-top: 2rem;
-    text-align: center;
+footer {
+  grid-area: footer;
+  margin-top: 5em;
 
-    @media only screen and (min-width: 600px) {
-      display: block;
-    }
+  @media only screen and (min-width: $br-phone) {
+    margin-top: 8em;
   }
 }

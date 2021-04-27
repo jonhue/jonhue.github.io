@@ -6,6 +6,7 @@ Generated using nucleoapp.com
 -------------------------------- */
 @import "variables";
 @import "mixins";
+@import "icons";
 
 @font-face {
   font-family: 'Nucleo';
@@ -162,5 +163,3 @@ Generated using nucleoapp.com
 .nc-flip-x {
   @include nc-flip(1, -1, 2);
 }
-
-@import "icons";

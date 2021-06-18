@@ -16,7 +16,7 @@
     "css-loader": "^5.2.6",
     "eslint": "^7.28.0",
     "file-loader": "^6.2.0",
-    "gh-pages": "^3.2.1",
+    "gh-pages": "^3.2.2",
     "node-sass": "^6.0.0",
     "sass-loader": "^12.1.0",
     "style-loader": "^2.0.0",

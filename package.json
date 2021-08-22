@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "webpack",
-    "start": "webpack serve",
+    "build": "webpack --mode=production",
+    "start": "webpack serve --mode=development",
     "deploy": "gh-pages -d dist -b master",
     "stylelint": "stylelint 'src/**/*.scss'",
     "eslint": "eslint 'src/**/*.js'"
@@ -26,6 +26,6 @@
     "stylelint-scss": "^3.20.1",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^4.0.0"
   }
 }

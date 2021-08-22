@@ -24,12 +24,6 @@ module.exports = {
           'sass-loader',
         ],
       },
-      {
-        test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/,
-        use: [
-          'file-loader'
-        ],
-      },
     ],
   },
 };

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap");
 @import "nucleo/scss/nucleo";
 
 $background: #f4d58d;
@@ -6,9 +6,7 @@ $secondary-background: #708d81;
 $color: #001427;
 $accent-color: #bf0603;
 $dark-accent-color: #8d0801;
-
 $content-width: 1250px;
-
 $br-small: 420px;
 $br-phone: 640px;
 $br-tablet: 1000px;
@@ -19,8 +17,8 @@ html {
   font-size: 16px;
   line-height: 1.58;
   overflow-y: scroll;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  text-size-adjust: 100%;
 
   @media only screen and (min-width: $content-width) {
     font-size: 20px;
@@ -29,10 +27,10 @@ html {
 
 body {
   color: $color;
-  font-family: 'Inter', sans-serif;
-  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
-  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
-  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+  font-family: Inter, sans-serif;
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
   font-kerning: normal;
   -webkit-font-smoothing: antialiased;

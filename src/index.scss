@@ -71,13 +71,13 @@ h1 {
   }
 
   @media only screen and (min-width: $br-phone) {
-    font-size: 6em;
+    font-size: 4em;
     line-height: 1;
     margin: 0.67em 0;
   }
 
   @media only screen and (min-width: $br-tablet) {
-    font-size: 8em;
+    font-size: 5em;
   }
 }
 
@@ -132,10 +132,14 @@ a {
 }
 
 header {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   grid-area: header;
   justify-content: space-between;
+
+  @media only screen and (min-width: $br-phone) {
+    align-items: center;
+  }
 
   .header__social {
     align-items: center;
@@ -165,12 +169,22 @@ header {
     }
   }
 
-  .header__actions a {
-    &:not(:first-child) {
-      margin-left: 1em;
+  .header__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 
-      @media only screen and (min-width: $br-phone) {
-        margin-left: 1.5em;
+    @media only screen and (min-width: $br-phone) {
+      flex-direction: row;
+
+      a {
+        &:not(:first-child) {
+          margin-left: 1em;
+
+          @media only screen and (min-width: $br-phone) {
+            margin-left: 1.5em;
+          }
+        }
       }
     }
   }
@@ -186,8 +200,8 @@ main {
   }
 
   p {
-    font-size: 1.2em;
-    max-width: 550px;
+    font-size: 1.1em;
+    max-width: 500px;
   }
 }
 
@@ -197,6 +211,16 @@ main {
 
   @media only screen and (min-width: $br-phone) {
     margin-top: 8em;
+  }
+
+  &.no-header-margin {
+    h2, h3 {
+      margin-bottom: 0;
+    }
+    & > p {
+      margin-top: 0.75em;
+      margin-bottom: 2em;
+    }
   }
 
   &__links {

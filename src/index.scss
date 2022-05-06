@@ -83,7 +83,8 @@ a {
     text-decoration: underline;
   }
 
-  &:active {
+  &:active,
+  &:focus {
     color: $accent-color;
   }
 }

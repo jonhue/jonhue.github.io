@@ -1,12 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
 @import "nucleo/scss/nucleo";
 
-$background: #f4d58d;
-$secondary-background: #708d81;
-$color: #001427;
-$accent-color: #bf0603;
-$dark-accent-color: #8d0801;
-$content-width: 1250px;
+$background: #fefae0;
+$secondary-background: #faedcd;
+$color: #161c00;
+$accent-color: #d4a373;
+$content-width: 1200px;
 $br-small: 420px;
 $br-phone: 640px;
 $br-tablet: 1000px;
@@ -19,10 +18,6 @@ html {
   overflow-y: scroll;
   text-size-adjust: 100%;
   text-size-adjust: 100%;
-
-  @media only screen and (min-width: $content-width) {
-    font-size: 20px;
-  }
 }
 
 body {
@@ -40,84 +35,46 @@ body {
   word-wrap: break-word;
 }
 
+.OuterWrapper {
+  background: $background;
+  margin: 0 auto;
+  max-width: $content-width;
+  min-height: 100vh;
+}
+
 .Wrapper {
-  background: #f4d58d;
   display: grid;
   grid-template-areas: "header" "main" "footer";
   grid-template-rows: auto;
-  margin: 0 auto;
-  max-width: $content-width;
   padding: 3em 1.5em;
 
   @media only screen and (min-width: $br-phone) {
-    padding: 3em;
+    padding: 3em 2em;
   }
 
   @media only screen and (min-width: $content-width) {
-    padding: 5em;
+    padding: 6em 4em 4em;
   }
 }
 
 h1 {
-  font-size: 3em;
-  font-weight: 900;
-  letter-spacing: -0.05em;
-  line-height: 1.2;
+  font-size: 2.5em;
+  font-weight: 600;
+  letter-spacing: -0.055em;
   margin: 1.5em 0;
-
-  @media only screen and (min-width: $br-small) {
-    font-size: 4em;
-    line-height: 1.1;
-  }
-
-  @media only screen and (min-width: $br-phone) {
-    font-size: 4em;
-    line-height: 1;
-    margin: 0.67em 0;
-  }
-
-  @media only screen and (min-width: $br-tablet) {
-    font-size: 5em;
-  }
 }
 
 h2 {
-  font-size: 2em;
-  font-weight: 900;
-  letter-spacing: -0.05em;
+  font-size: 1.5em;
+  font-weight: 600;
+  letter-spacing: -0.055em;
   line-height: 1;
-
-  @media only screen and (min-width: $br-small) {
-    font-size: 2.5em;
-  }
-
-  @media only screen and (min-width: $br-phone) {
-    font-size: 3em;
-  }
-}
-
-h3 {
-  font-size: 2em;
-  font-weight: 900;
-  letter-spacing: -0.05em;
-  line-height: 1;
-
-  @media only screen and (min-width: $br-small) {
-    font-size: 2.5em;
-  }
-
-  @media only screen and (min-width: $br-phone) {
-    font-size: 3em;
-  }
-
-  @media only screen and (min-width: $br-tablet) {
-    font-size: 2.5em;
-  }
 }
 
 a {
-  color: $accent-color;
-  font-weight: 900;
+  color: $color;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   text-decoration: none;
 
   &:active,
@@ -127,7 +84,7 @@ a {
   }
 
   &:active {
-    color: $dark-accent-color;
+    color: $accent-color;
   }
 }
 
@@ -141,29 +98,41 @@ header {
     align-items: center;
   }
 
+  a {
+    opacity: 0.8;
+    text-decoration: none !important;
+    transition: opacity 0.05s ease-out;
+
+    &:active,
+    &:focus,
+    &:hover {
+      opacity: 1;
+    }
+  }
+
   .header__social {
     align-items: center;
     display: flex;
+    font-size: 1.1em;
 
     i.nc {
       color: $color;
       font-size: 1.25em;
 
-      &:active,
-      &:focus,
-      &:hover {
+      &:active {
         color: $accent-color;
       }
     }
 
     a {
       line-height: 1;
+      opacity: 0.9;
 
       &:not(:first-child) {
         margin-left: 1em;
 
         @media only screen and (min-width: $br-phone) {
-          margin-left: 1.5em;
+          margin-left: 1em;
         }
       }
     }
@@ -173,6 +142,7 @@ header {
     align-items: flex-end;
     display: flex;
     flex-direction: column;
+    font-size: 1.2em;
 
     @media only screen and (min-width: $br-phone) {
       flex-direction: row;
@@ -182,7 +152,7 @@ header {
           margin-left: 1em;
 
           @media only screen and (min-width: $br-phone) {
-            margin-left: 1.5em;
+            margin-left: 1em;
           }
         }
       }
@@ -195,71 +165,53 @@ main {
 }
 
 .Hero {
-  h1 {
-    max-width: 1000px;
+  margin-top: 2em;
+
+  @media only screen and (min-width: $br-phone) {
+    margin-top: 4em;
   }
 
-  p {
-    max-width: 500px;
+  @media only screen and (min-width: $br-tablet) {
+    margin-top: 6em;
+  }
+
+  h1 {
+    margin: 0.4em 0;
+
+    span {
+      color: $accent-color;
+    }
   }
 }
 
 .Section {
-  border-top: 0.2em solid $color;
-  margin-top: 5em;
+  & > :first-child {
+    margin-bottom: 1em;
 
-  @media only screen and (min-width: $br-phone) {
-    margin-top: 8em;
-  }
-
-  &.no-header-margin {
-    h2,
-    h3 {
-      margin-bottom: 0;
-    }
-
-    & > p {
-      margin-bottom: 2em;
-      margin-top: 0.75em;
+    @media only screen and (min-width: $br-tablet) {
+      margin-bottom: 1.5em;
     }
   }
 
   &__links {
-    display: grid;
-    grid-gap: 1em;
-    grid-template-columns: 1fr;
-
-    @media only screen and (min-width: $br-phone) {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    @media only screen and (min-width: $br-tablet) {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    a {
-      p {
-        font-weight: normal;
-
-        &:not(:first-child) {
-          margin-top: 0;
-        }
-      }
+    p {
+      margin-top: 0;
     }
   }
 }
 
 .SectionGrid {
   display: grid;
+  grid-gap: 1em;
   grid-template-columns: 1fr;
+  margin-top: 2em;
 
-  @media only screen and (min-width: $br-tablet) {
-    grid-template-columns: 1fr 1fr;
+  @media only screen and (min-width: $br-phone) {
+    grid-gap: 2em;
+    grid-template-columns: 1fr 1fr 1fr;
 
     .Section {
       &__links {
-        grid-template-columns: 1fr;
-
         p {
           max-width: 400px;
         }
@@ -270,9 +222,9 @@ main {
 
 footer {
   grid-area: footer;
-  margin-top: 5em;
+  margin-top: 3em;
 
-  @media only screen and (min-width: $br-phone) {
-    margin-top: 8em;
+  :last-child {
+    margin-bottom: 0;
   }
 }

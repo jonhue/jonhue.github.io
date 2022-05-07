@@ -87,6 +87,11 @@ a {
   &:focus {
     color: $accent-color;
   }
+
+  &[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
 }
 
 header {

@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "css-loader": "^6.7.1",
-    "eslint": "^8.19.0",
+    "eslint": "^8.20.0",
     "gh-pages": "^4.0.0",
     "sass": "^1.53.0",
     "sass-loader": "^13.0.2",

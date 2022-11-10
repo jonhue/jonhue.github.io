@@ -17,7 +17,7 @@
     "eslint": "^8.27.0",
     "gh-pages": "^4.0.0",
     "sass": "^1.56.1",
-    "sass-loader": "^13.1.0",
+    "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
     "stylelint": "^14.14.1",
     "stylelint-config-standard-scss": "^6.1.0",

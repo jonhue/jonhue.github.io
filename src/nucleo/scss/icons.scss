@@ -1,37 +1,113 @@
-/* ------------------------
+/* --------------------------------
+
+Nucleo Web Font
+Generated using nucleoapp.com
+
+-------------------------------- */
+$nc-font-path: "nucleo/fonts" !default;
+
+@font-face {
+  font-family: 'Nucleo';
+  src: url('#{$nc-font-path}/Nucleo.eot');
+  src: url('#{$nc-font-path}/Nucleo.eot') format('embedded-opentype'),
+    url('#{$nc-font-path}/Nucleo.woff2') format('woff2'),
+    url('#{$nc-font-path}/Nucleo.woff') format('woff'),
+    url('#{$nc-font-path}/Nucleo.ttf') format('truetype'),
+    url('#{$nc-font-path}/Nucleo.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*------------------------
+	base class definition
+-------------------------*/
+
+.nc {
+  display: inline-block;
+  font: normal normal normal 1em/1 'Nucleo';
+  color: inherit;
+  flex-shrink: 0;
+  speak: none;
+  text-transform: none;
+  /* Better Font Rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*------------------------
+  change icon size
+-------------------------*/
+
+/* relative units */
+.nc-sm {
+  font-size: 0.8em;
+}
+.nc-lg {
+  font-size: 1.2em;
+}
+/* absolute units */
+.nc-16 {
+  font-size: 16px;
+}
+.nc-32 {
+  font-size: 32px;
+}
+
+/*------------------------
+  spinning icons
+-------------------------*/
+
+.nc-is-spinning {
+  animation: nc-spin 1s infinite linear;
+}
+
+@keyframes nc-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*------------------------
+  rotated/flipped icons
+-------------------------*/
+
+.nc-rotate-90  {
+	transform: rotate(90deg);
+}
+
+.nc-rotate-180 {
+	transform: rotate(180deg);
+}
+
+.nc-rotate-270 {
+	transform: rotate(270deg);
+}
+
+.nc-flip-y {
+	transform: scaleY(-1);
+}
+.nc-flip-x {
+	transform: scaleX(-1);
+}
+
+/*------------------------
 	icons
-------------------------- */
+-------------------------*/
+$icons: (
+  hat-3: 'ea02',
+  logo-github: 'ea03',
+  logo-linkedin: 'ea04',
+);
+
 @function unicode($str) {
   @return unquote("\"\\#{$str}\"");
 }
 
-$nc-logo-github: unicode(ea05);
-$nc-logo-linkedin: unicode(ea06);
-$nc-moon-full-2: unicode(ea09);
-$nc-tail-triangle-down-2: unicode(ea0a);
-$nc-moon-stars: unicode(ea0b);
-$nc-shape-star: unicode(ea0c);
-
-.nc-logo-github::before {
-  content: $nc-logo-github;
-}
-
-.nc-logo-linkedin::before {
-  content: $nc-logo-linkedin;
-}
-
-.nc-moon-full-2::before {
-  content: $nc-moon-full-2;
-}
-
-.nc-tail-triangle-down-2::before {
-  content: $nc-tail-triangle-down-2;
-}
-
-.nc-moon-stars::before {
-  content: $nc-moon-stars;
-}
-
-.nc-shape-star::before {
-  content: $nc-shape-star;
+@each $name, $code in $icons {
+  .nc-#{"" + $name}::before {
+    content: unicode($code);
+  }
 }

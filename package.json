@@ -13,7 +13,7 @@
     "node": "19.2.0"
   },
   "devDependencies": {
-    "css-loader": "^6.7.2",
+    "css-loader": "^6.7.3",
     "eslint": "^8.28.0",
     "gh-pages": "^4.0.0",
     "sass": "^1.56.1",
